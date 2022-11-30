@@ -5,7 +5,6 @@ const cors = require('cors')
 
 const app = express()
 const route = require('./routes/route')
-const POST = 9000
 
 app.use(cors())
 app.use(express.json())
@@ -27,6 +26,4 @@ app.get('/', function(req, res) {
     res.send("We are on home")
 })
 
-app.listen(POST, function() {
-    console.log(`The server is running on ${POST}`)
-})
+app.listen(process.env.PORT || 9000)
